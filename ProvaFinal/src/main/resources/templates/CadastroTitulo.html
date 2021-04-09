@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{LayoutPadrao}">
+<head>
+<meta charset="utf-8">
+
+<title>Cadastro</title>
+</head>
+<body>
+<section layout:fragment="conteudo">
+
+
+<form action="/titulos" method="post">
+<div class="alert alert-success alert-dismissible" role="alert"
+th:if="${!#strings.isEmpty(mensagem)}">
+	<button type="button" class="close" data-dismiss="alert"></button>
+	<span th:text="${mensagem}">Salvo com sucesso!</span>
+</div>
+
+<div class="card">
+<div class="card-header tux-titulo-panel"> <span class="tux-titulo-panel">
+DADOS DO SOLICITANTE <br>
+Por favor, informe todos os campos abaixo para que possamos realizar seu Pré-Cadastro. 
+Caso não possua o número do Cartão SUS, faça uma consulta no ConecteSUS ou procure uma 
+unidade de saúde básica mais próxima.</span>
+</div>
+</div>
+	<div class="card">
+	
+	<div class="card">
+	<label for="dataVencimento" class="col-sm-2 col-form-label">CNS - Cartão Nacional de Saúde*</label>
+	<div class="col-sm-2">
+		<input type="text" class="form-control" id="CNS" name="CNS"/>
+	</div>
+	
+	
+
+	
+	<label for="dataVencimento" class="col-sm-2 col-form-label">CPF*</label>
+	<div class="col-sm-2">
+		<input type="text" class="form-control" id="CPF" name="CPF"/>
+	</div>
+	
+	
+	
+	<label for="dataVencimento" class="col-sm-2 col-form-label">Nome Completo*</label>
+	<div class="col-sm-2">
+		<input type="text" class="form-control" id="Nome_Completo" name="Nome_Completo"/>
+	</div>
+
+	
+	
+	<label for="dataVencimento" class="col-sm-2 col-form-label">Telefone*</label>
+	<div class="col-sm-2">
+		<input type="text" class="form-control" id="Telefone" name="Telefone"/>
+	</div>
+	
+	
+	
+	<label for="dataVencimento" class="col-sm-2 col-form-label">Informe seu Email*</label>
+	<div class="col-sm-2">
+		<input type="text" class="form-control" id="Email" name="Email"/>
+	</div>
+	
+	
+	
+	<label for="dataVencimento" class="col-sm-2 col-form-label">Data de Nascimento*</label>
+	<div class="col-sm-2">
+		<input type="text" class="form-control" id="dataNascimento" placeholder="dd/mm/aaaa" name="dataNascimento"/>
+	</div>
+	
+	
+	
+		<label for="status" class="col-sm-2 col-form-label">Sexo*</label>
+		<div class="col-sm-2">
+		<select class="form-control" id="sexo" name="sexo">
+			<option th:each="status : ${todosStatusTitulo}"
+			th:value="${status}" th:text="${status.descricao}"></option>
+		</select>
+		</div>
+	
+
+	<label for="dataVencimento" class="col-sm-2 col-form-label">Nome da Mãe*</label>
+	<div class="col-sm-2">
+		<input type="text" class="form-control" id="Nome_Mae" name="Nome_Mae"/>
+	</div>
+	
+	
+	
+	<label for="dataVencimento" class="col-sm-2 col-form-label">Informe seu CEP*</label>
+	<div class="col-sm-2">
+		<input type="text" class="form-control" id="CEP" name="CEP"/>
+	</div>
+	
+	
+	
+	<label for="dataVencimento" class="col-sm-2 col-form-label">Informe o Bairro*</label>
+	<div class="col-sm-2">
+		<input type="text" class="form-control" id="Bairro" name="Bairro"/>
+	</div>
+	
+	
+
+	<label for="dataVencimento" class="col-sm-2 col-form-label">Informe seu Endereço*</label>
+	<div class="col-sm-2">
+		<input type="text" class="form-control" id="Endereco" name="Endereco"/>
+	</div>
+
+	
+	
+	<label for="dataVencimento" class="col-sm-2 col-form-label"> Informe o Número*</label>
+	<div class="col-sm-2">
+		<input type="text" class="form-control" id="Numero" name="Numero"/>
+	</div>
+
+	
+	
+	<label for="dataVencimento" class="col-sm-2 col-form-label">Informe sua Profissao*</label>
+	<div class="col-sm-2">
+		<input type="text" class="form-control" id="Profissao" name="Profissao"/>
+	</div>
+	
+		
+	<div class="form-group row">
+		<div class="col-md-2 offset-md-2 col-sm-10">
+			<button type="submit" class="btn btn-primary">Enviar Dados</button>
+			
+		</div>
+	</div>
+	</div>
+</div>
+</form>
+
+
+
+</section>
+</body>
+</html>
